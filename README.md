@@ -16,7 +16,7 @@
 
 O Site e uma landing page que apresenta uma interface moderna e elegante, voltada para serviços de torna as visível as empresas no mundo virtual, sendo esse um dos pontos que, atualmente e indispensavel para empresas que, visam crescer em um mundo competitivo.
 
-Acesse o site **[LoopStudios](https://barber-shop-eta-six.vercel.app/)**.
+Acesse o site **[LoopStudios](https://loop-studios-lac.vercel.app)**.
 
 ## Iniciar
 
