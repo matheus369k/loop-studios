@@ -1,0 +1,34 @@
+.header_navbar {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto !important;
+}
+
+.header_navbar a {
+  font-family: var(--font-alata), sans-serif;
+  font-weight: bold;
+  color: white;
+
+  &::after {
+    content: '';
+    border-bottom: 2px solid white;
+    width: 0%;
+    height: 1px;
+    display: block;
+    margin-inline: auto;
+    transition: all 250ms;
+  }
+
+  &:hover::after {
+    width: 50%;
+  }
+}
+
+@media (width < 768px) {
+  .header_navbar {
+    flex-direction: column;
+    font-weight: normal;
+    align-items: center;
+    gap: 1rem;
+  }
+}

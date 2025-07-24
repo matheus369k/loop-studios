@@ -1,95 +1,91 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { ourCreations } from '@/datas/our-creations'
+import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <main className={styles.main_container}>
+      <div className={`container-fluid ${styles.apresetation_image}`}>
+        <div className='d-flex container h-100 p-0 align-items-center'>
+          <div className={styles.apresetation_title}>
+            <h1>Immersive experiences that deliver</h1>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+
+      <div className='container'>
+        <div className='row flex-d flex-md-nowrap align-items-md-end'>
+          <div className='col-md-10 col-xl-7'>
+            <picture className={styles.about_image}>
+              <source
+                media='(max-width: 767px)'
+                srcSet={'/desktop/image-interactive.jpg'}
+                type='image/jpg'
+              />
+              <img
+                alt="Tha's showing one people with vr glasses"
+                className='img-fluid figure-img'
+                loading='lazy'
+                src={'/mobile/image-interactive.jpg'}
+              />
+            </picture>
+          </div>
+
+          <div className={`col-md-5 col-xl-6 ${styles.about_caption}`}>
+            <h2 className='main_title'>The leader in interactive VR</h2>
+            <p>
+              Founded in 2011, Loopstudios has been producing world-class
+              virtual reality projects for some of the best companies around the
+              globe. Our award-winning creations have transformed businesses
+              through digital experiences that bind to their brand.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className='d-flex position-relative container row-gap-5 flex-column'>
+        <div className='row'>
+          <div className='d-flex justify-content-between align-content-center'>
+            <h2 className='main_title'>Our creations</h2>
+
+            <button
+              className={`btn btn-outline-dark ${styles.our_creation_header_button}`}
+              type='button'
+            >
+              See all
+            </button>
+          </div>
+        </div>
+        <div className='row'>
+          {ourCreations.map((ourCreation) => {
+            return (
+              <div className='col-md-3 p-4' key={ourCreation.id}>
+                <div
+                  className={`card border-0 text-bg-dark ${styles.our_creation_content}`}
+                >
+                  <picture>
+                    <source
+                      media='(max-width: 767px)'
+                      srcSet={ourCreation.image.mobile}
+                      type='image/jpg'
+                    />
+                    <img
+                      alt={ourCreation.name}
+                      className={`card-image ${styles.our_creation_content_image}`}
+                      loading='lazy'
+                      src={ourCreation.image.desktop}
+                    />
+                  </picture>
+                  <div
+                    className={`card-img-overlay ${styles.our_creation_content_title}`}
+                  >
+                    <h3 className='card-title'>{ourCreation.name}</h3>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </main>
+  )
 }

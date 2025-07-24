@@ -19,6 +19,7 @@
 
 # production
 /build
+/guide
 
 # misc
 .DS_Store
