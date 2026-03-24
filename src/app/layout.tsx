@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Header } from '@/components/Header'
 import './globals.css'
 import { Footer } from '@/components/Footer'
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { env } from '@/util/env';
 
 const FontJosefinSans = Josefin_Sans({
   variable: '--font-josefin-sans',
@@ -36,6 +38,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   )

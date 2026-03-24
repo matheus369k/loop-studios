@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.7",
     "next": "15.4.2",
@@ -22,7 +23,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^16.6.1",
     "typescript": "^5",
-    "ultracite": "5.0.47"
+    "ultracite": "5.0.47",
+    "zod": "^4.3.6"
   }
 }
